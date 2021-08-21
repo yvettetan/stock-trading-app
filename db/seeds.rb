@@ -9,9 +9,9 @@
     Role.find_or_create_by({name: role})
 end
 User.create!([
-            { first_name: 'Tom', last_name: 'Reid', email: 'tom_admin@email.com', password: '123qwe', role_id: 1},
-            { first_name: 'Jane', last_name: 'Doe', email: 'janedoe_broker@email.com', password: '123qwe', role_id: 2},
-            { first_name: 'John', last_name: 'Doe', email: 'johndoe_buyer@email.com', password: '123qwe', role_id: 3}
+            { first_name: 'Tom', last_name: 'Reid', email: 'tom_admin@email.com', password: '123qwe' },
+            { first_name: 'Jane', last_name: 'Doe', email: 'janedoe_broker@email.com', password: '123qwe' },
+            { first_name: 'John', last_name: 'Doe', email: 'johndoe_buyer@email.com', password: '123qwe' }
             ])
 User.first.roles << Role.find_by_name(:Admin)
 User.second.roles << Role.find_by_name(:Broker)
