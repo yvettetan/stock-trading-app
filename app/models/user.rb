@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :role
-
+  # belongs_to :role
+  has_many :user_roles
+  has_many :roles, through: :user_roles
   validates :first_name, :last_name, :email, :password, presence: true
 
   def full_name
