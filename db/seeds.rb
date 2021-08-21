@@ -8,10 +8,11 @@
 ['Admin', 'Broker', 'Buyer'].each do |role|
     Role.find_or_create_by({name: role})
 end
-
-User.create!(
-    first_name: 'Tom',
-    last_name: 'Reid',
-    email: 'tom_admin@email.com',
-    password: 'tom_admin123',
-    role_id: 1)
+User.create!([
+            { first_name: 'Tom', last_name: 'Reid', email: 'tom_admin@email.com', password: '123qwe', role_id: 1},
+            { first_name: 'Jane', last_name: 'Doe', email: 'janedoe_broker@email.com', password: '123qwe', role_id: 2},
+            { first_name: 'John', last_name: 'Doe', email: 'johndoe_buyer@email.com', password: '123qwe', role_id: 3}
+            ])
+# UserRole.create!([
+#                 { user_id: User.find_by(email:'tom_admin@email.com'), role_id: 1 }
+#                 ])   
